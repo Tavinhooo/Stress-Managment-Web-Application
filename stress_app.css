@@ -1,86 +1,72 @@
+/* Global reset */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Segoe UI', sans-serif;
   }
   
   body {
-    background-color: #f7f7f7;
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #f4f4f4;
   }
   
+  /* Navigation tabs */
   .tabs {
     display: flex;
-    background-color: #fff;
-    border-bottom: 2px solid #ccc;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    justify-content: space-around;
+    background-color: #f0f0f0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 10;
   }
   
   .tab {
-    padding: 15px 20px;
-    cursor: pointer;
     flex: 1;
+    padding: 18px 0;
     text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-size: 16px;
+    font-weight: 500;
     background-color: #f0f0f0;
-    transition: background-color 0.2s ease;
+    color: #333;
   }
   
   .tab:hover {
-    background-color: #d6e8ff;
+    background-color: #e0e0e0;
   }
   
   .tab.active {
-    background-color: #cce0ff;
+    background-color: #cde1ff;
     font-weight: bold;
   }
   
+  /* Main content section */
   .content {
-    padding: 30px 20px;
-    max-width: 1000px;
-    margin: auto;
+    display: flex;
+    justify-content: center;
+    padding: 60px 20px;
   }
   
   .section {
     background-color: #ffffff;
-    padding: 25px;
-    margin-bottom: 30px;
-    border-radius: 10px;
-    box-shadow: 0 0 8px rgba(0, 0, 0, 0.06);
-    text-align: center;
-  }
-  
-  .section h2, .section h3 {
-    margin-bottom: 15px;
-  }
-  
-  .testimonials {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    flex-wrap: wrap;
-    margin-top: 20px;
-  }
-  
-  .testimonial-card {
-    background-color: #fff;
-    border-radius: 12px;
-    overflow: hidden;
-    width: 220px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .testimonial-card img {
+    padding: 40px;
+    border-radius: 16px;
+    max-width: 800px;
     width: 100%;
-    height: 160px;
-    object-fit: cover;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
   }
   
-  .testimonial-info {
-    padding: 10px 12px;
-    font-size: 14px;
-    line-height: 1.4;
+  .section h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 16px;
+  }
+  
+  .section p {
+    font-size: 16px;
+    color: #333;
   }
   
