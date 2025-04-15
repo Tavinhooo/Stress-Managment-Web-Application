@@ -6,7 +6,6 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
   <nav class="tabs">
     <div class="tab active" onclick="switchTab(this)">Home page</div>
     <div class="tab" onclick="switchTab(this)">How do you feel</div>
@@ -14,20 +13,102 @@
     <div class="tab" onclick="switchTab(this)">Relaxation 2</div>
     <div class="tab" onclick="switchTab(this)">Show Yourself</div>
   </nav>
-
-  <main class="content">
+  <main class="content" id="homeSection" style="display: flex;">
+    <div>
+      <section class="section">
+        <h2>What is stress</h2>
+        <p>Stress is your body's reaction to a challenge or demand. Learn how to manage and reduce it here.</p>
+      </section>
+      <section class="section">
+        <h2>What others say</h2>
+        <div class="testimonials">
+          <div class="testimonial-card">
+            <img src="person1.jpg" alt="Gerald Win-He">
+            <p><strong>Gerald Win-He</strong><br>Football Professional</p>
+            <p class="quote">"The breathing circle really helped me stay calm on and off the field."</p>
+          </div>
+          <div class="testimonial-card">
+            <img src="person2.jpg" alt="Alfred White">
+            <p><strong>Alfred White</strong><br>High School Professor</p>
+            <p class="quote">"The videos and activities helped me unwind after stressful classes."</p>
+          </div>
+          <div class="testimonial-card">
+            <img src="person3.png" alt="Josef Hamilton">
+            <p><strong>Josef Hamilton</strong><br>Gardener</p>
+            <p class="quote">"I love how simple and calming this app is. It’s a daily tool now."</p>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+  <main class="content" id="howFeelSection" style="display: none;">
     <section class="section">
-      <h2>What is stress</h2>
-      <p>Stress is your body's reaction to a challenge or demand. Learn how to manage and reduce it here.</p>
+      <h2>How do you feel?</h2>
+      <div class="sliders">
+        <div class="slider-group">
+          <label for="today">How did you feel today in a scale 0–100</label>
+          <input type="range" id="today" min="0" max="100" value="50">
+        </div>
+        <div class="slider-group">
+          <label for="year">How did you feel this year in a scale 0–100</label>
+          <input type="range" id="year" min="0" max="100" value="50">
+        </div>
+        <div class="slider-group">
+          <label for="month">How did you feel this month in a scale 0–100</label>
+          <input type="range" id="month" min="0" max="100" value="50">
+        </div>
+        <div class="slider-group">
+          <label for="life">How did you feel since you were born in a scale 0–100 (optional)</label>
+          <input type="range" id="life" min="0" max="100" value="50">
+        </div>
+      </div>
     </section>
   </main>
-
-  <script>
-    function switchTab(clickedTab) {
-      document.querySelectorAll('.tab').forEach(tab => tab.classList.remove('active'));
-      clickedTab.classList.add('active');
-    }
-  </script>
-
+  <main class="content" id="relaxationSection" style="display: none;">
+    <section class="section">
+      <h2>Video Relaxation</h2>
+      <div class="video-container">
+        <iframe width="420" height="315" 
+                src="https://www.youtube.com/embed/V1RPi2MYptM" 
+                title="Relaxation Video" 
+                frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen></iframe>
+      </div>
+      <div class="stats-section">
+        <div class="stats-text">
+          <p><strong>Stats showing people's stress:</strong><br>
+          Did the video help for you not to be in the chart?</p>
+        </div>
+        <div class="stats-image">
+          <img src="stats-stress.png" alt="Stress Stats">
+        </div>
+      </div>
+    </section>
+  </main>
+  <main class="content" id="relaxation2Section" style="display: none;">
+    <section class="section">
+      <h2>Breathe Meditation</h2>
+      <div class="circle-container" id="breatheContainer">
+        <div class="circle"></div>
+        <p id="breatheText">Breathe In!</p>
+        <div class="pointer-container">
+          <span class="pointer"></span>
+        </div>
+        <div class="gradient-circle"></div>
+      </div>
+    </section>
+  </main>
+  <main class="content" id="showYourselfSection" style="display: none;">
+    <section class="section camera-section">
+      <div class="camera-header">
+        <span class="camera-icon">📷</span>
+      </div>
+      <video id="webcam" autoplay playsinline></video>
+      <p class="camera-text">This is the Beautiful person you are — go ahead and download it</p>
+      <button class="download-btn" disabled>⬇ Download</button>
+    </section>
+  </main>
+  <script src="client.js"></script>
 </body>
 </html>
